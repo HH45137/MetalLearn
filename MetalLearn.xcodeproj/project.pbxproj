@@ -13,27 +13,7 @@
 		040F040D2BD65C4400CA050B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 040F040C2BD65C4400CA050B /* Shaders.metal */; };
 		040F04102BD65C4500CA050B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040F040F2BD65C4500CA050B /* Assets.xcassets */; };
 		040F04132BD65C4500CA050B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 040F04122BD65C4500CA050B /* Base */; };
-		040F041E2BD65C4500CA050B /* MetalLearnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F041D2BD65C4500CA050B /* MetalLearnTests.swift */; };
-		040F04282BD65C4500CA050B /* MetalLearnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F04272BD65C4500CA050B /* MetalLearnUITests.swift */; };
-		040F042A2BD65C4500CA050B /* MetalLearnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F04292BD65C4500CA050B /* MetalLearnUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		040F041A2BD65C4500CA050B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 040F03FB2BD65C4400CA050B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 040F04022BD65C4400CA050B;
-			remoteInfo = MetalLearn;
-		};
-		040F04242BD65C4500CA050B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 040F03FB2BD65C4400CA050B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 040F04022BD65C4400CA050B;
-			remoteInfo = MetalLearn;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		040F04032BD65C4400CA050B /* MetalLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,33 +21,13 @@
 		040F04082BD65C4400CA050B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		040F040A2BD65C4400CA050B /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		040F040C2BD65C4400CA050B /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		040F040E2BD65C4400CA050B /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		040F040F2BD65C4500CA050B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040F04122BD65C4500CA050B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		040F04142BD65C4500CA050B /* MetalLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalLearn.entitlements; sourceTree = "<group>"; };
-		040F04192BD65C4500CA050B /* MetalLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		040F041D2BD65C4500CA050B /* MetalLearnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalLearnTests.swift; sourceTree = "<group>"; };
-		040F04232BD65C4500CA050B /* MetalLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		040F04272BD65C4500CA050B /* MetalLearnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalLearnUITests.swift; sourceTree = "<group>"; };
-		040F04292BD65C4500CA050B /* MetalLearnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalLearnUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		040F04002BD65C4400CA050B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040F04162BD65C4500CA050B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040F04202BD65C4500CA050B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				040F04052BD65C4400CA050B /* MetalLearn */,
-				040F041C2BD65C4500CA050B /* MetalLearnTests */,
-				040F04262BD65C4500CA050B /* MetalLearnUITests */,
 				040F04042BD65C4400CA050B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,8 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				040F04032BD65C4400CA050B /* MetalLearn.app */,
-				040F04192BD65C4500CA050B /* MetalLearnTests.xctest */,
-				040F04232BD65C4500CA050B /* MetalLearnUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,29 +60,11 @@
 				040F04082BD65C4400CA050B /* GameViewController.swift */,
 				040F040A2BD65C4400CA050B /* Renderer.swift */,
 				040F040C2BD65C4400CA050B /* Shaders.metal */,
-				040F040E2BD65C4400CA050B /* ShaderTypes.h */,
 				040F040F2BD65C4500CA050B /* Assets.xcassets */,
 				040F04112BD65C4500CA050B /* Main.storyboard */,
 				040F04142BD65C4500CA050B /* MetalLearn.entitlements */,
 			);
 			path = MetalLearn;
-			sourceTree = "<group>";
-		};
-		040F041C2BD65C4500CA050B /* MetalLearnTests */ = {
-			isa = PBXGroup;
-			children = (
-				040F041D2BD65C4500CA050B /* MetalLearnTests.swift */,
-			);
-			path = MetalLearnTests;
-			sourceTree = "<group>";
-		};
-		040F04262BD65C4500CA050B /* MetalLearnUITests */ = {
-			isa = PBXGroup;
-			children = (
-				040F04272BD65C4500CA050B /* MetalLearnUITests.swift */,
-				040F04292BD65C4500CA050B /* MetalLearnUITestsLaunchTests.swift */,
-			);
-			path = MetalLearnUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,42 +87,6 @@
 			productReference = 040F04032BD65C4400CA050B /* MetalLearn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		040F04182BD65C4500CA050B /* MetalLearnTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 040F04302BD65C4500CA050B /* Build configuration list for PBXNativeTarget "MetalLearnTests" */;
-			buildPhases = (
-				040F04152BD65C4500CA050B /* Sources */,
-				040F04162BD65C4500CA050B /* Frameworks */,
-				040F04172BD65C4500CA050B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				040F041B2BD65C4500CA050B /* PBXTargetDependency */,
-			);
-			name = MetalLearnTests;
-			productName = MetalLearnTests;
-			productReference = 040F04192BD65C4500CA050B /* MetalLearnTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		040F04222BD65C4500CA050B /* MetalLearnUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 040F04332BD65C4500CA050B /* Build configuration list for PBXNativeTarget "MetalLearnUITests" */;
-			buildPhases = (
-				040F041F2BD65C4500CA050B /* Sources */,
-				040F04202BD65C4500CA050B /* Frameworks */,
-				040F04212BD65C4500CA050B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				040F04252BD65C4500CA050B /* PBXTargetDependency */,
-			);
-			name = MetalLearnUITests;
-			productName = MetalLearnUITests;
-			productReference = 040F04232BD65C4500CA050B /* MetalLearnUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,14 +99,6 @@
 				TargetAttributes = {
 					040F04022BD65C4400CA050B = {
 						CreatedOnToolsVersion = 15.3;
-					};
-					040F04182BD65C4500CA050B = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 040F04022BD65C4400CA050B;
-					};
-					040F04222BD65C4500CA050B = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 040F04022BD65C4400CA050B;
 					};
 				};
 			};
@@ -222,8 +116,6 @@
 			projectRoot = "";
 			targets = (
 				040F04022BD65C4400CA050B /* MetalLearn */,
-				040F04182BD65C4500CA050B /* MetalLearnTests */,
-				040F04222BD65C4500CA050B /* MetalLearnUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,20 +127,6 @@
 			files = (
 				040F04102BD65C4500CA050B /* Assets.xcassets in Resources */,
 				040F04132BD65C4500CA050B /* Base in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040F04172BD65C4500CA050B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040F04212BD65C4500CA050B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,37 +144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		040F04152BD65C4500CA050B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				040F041E2BD65C4500CA050B /* MetalLearnTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040F041F2BD65C4500CA050B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				040F04282BD65C4500CA050B /* MetalLearnUITests.swift in Sources */,
-				040F042A2BD65C4500CA050B /* MetalLearnUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		040F041B2BD65C4500CA050B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 040F04022BD65C4400CA050B /* MetalLearn */;
-			targetProxy = 040F041A2BD65C4500CA050B /* PBXContainerItemProxy */;
-		};
-		040F04252BD65C4500CA050B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 040F04022BD65C4400CA050B /* MetalLearn */;
-			targetProxy = 040F04242BD65C4500CA050B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		040F04112BD65C4500CA050B /* Main.storyboard */ = {
@@ -451,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -479,80 +327,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		040F04312BD65C4500CA050B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SCF95HWY5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearnTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalLearn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetalLearn";
-			};
-			name = Debug;
-		};
-		040F04322BD65C4500CA050B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SCF95HWY5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearnTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetalLearn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MetalLearn";
-			};
-			name = Release;
-		};
-		040F04342BD65C4500CA050B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SCF95HWY5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearnUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MetalLearn;
-			};
-			name = Debug;
-		};
-		040F04352BD65C4500CA050B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SCF95HWY5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hh45137.MetalLearnUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MetalLearn;
 			};
 			name = Release;
 		};
@@ -573,24 +349,6 @@
 			buildConfigurations = (
 				040F042E2BD65C4500CA050B /* Debug */,
 				040F042F2BD65C4500CA050B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		040F04302BD65C4500CA050B /* Build configuration list for PBXNativeTarget "MetalLearnTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				040F04312BD65C4500CA050B /* Debug */,
-				040F04322BD65C4500CA050B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		040F04332BD65C4500CA050B /* Build configuration list for PBXNativeTarget "MetalLearnUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				040F04342BD65C4500CA050B /* Debug */,
-				040F04352BD65C4500CA050B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
