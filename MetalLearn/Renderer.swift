@@ -2,6 +2,12 @@ import Metal
 import MetalKit
 import simd
 
+
+struct Vertex {
+    var position: simd_float2
+    var color: simd_float3
+}
+
 class Renderer: NSObject, MTKViewDelegate {
     
     var device: MTLDevice
@@ -32,10 +38,10 @@ class Renderer: NSObject, MTKViewDelegate {
             print("Failed to create render pipeline state!")
         }
         
-        let vertices: [Float] = [
-            -0.5, -0.5,
-             0.5, -0.5,
-             0.0, 0.5
+        let vertices: [Vertex] = [
+            Vertex(position: simd_float2(-0.5, -0.5), color: simd_float3(1.0, 0.0, 0.0)),
+            Vertex(position: simd_float2(0.5, -0.5), color: simd_float3(0.0, 1.0, 0.0)),
+            Vertex(position: simd_float2(0.0, 0.5), color: simd_float3(0.0, 0.0, 1.0))
         ]
         
         self.vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout.stride(ofValue: vertices[0]), options: MTLResourceOptions.storageModeShared)!
@@ -53,7 +59,7 @@ class Renderer: NSObject, MTKViewDelegate {
         let commandBuffer = self.commandQueue.makeCommandBuffer()
         
         let renderPassDescriptor = view.currentRenderPassDescriptor!
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 0.0, blue: 0.2, alpha: 1.0)
         
         // Create render command encoder
         let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
