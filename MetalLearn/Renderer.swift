@@ -20,6 +20,7 @@ class Renderer: NSObject, MTKViewDelegate {
     
     var vertexBuffer: MTLBuffer?
     var vertexDescriptor: MTLVertexDescriptor?
+    var indexBuffer: MTLBuffer?
     
     init?(metalKitView: MTKView) {
         self.device = metalKitView.device!
@@ -55,16 +56,21 @@ class Renderer: NSObject, MTKViewDelegate {
             print("Failed to create render pipeline state!")
         }
         
+        // Vertex buffer
         let vertices: [Vertex] = [
             Vertex(position: simd_float2(-0.5, -0.5), color: simd_float3(1.0, 0.0, 0.0)),
             Vertex(position: simd_float2(0.5, -0.5), color: simd_float3(0.0, 1.0, 0.0)),
             Vertex(position: simd_float2(0.5, 0.5), color: simd_float3(0.0, 0.0, 1.0)),
-            Vertex(position: simd_float2(-0.5, -0.5), color: simd_float3(1.0, 0.0, 0.0)),
-            Vertex(position: simd_float2(0.5, 0.5), color: simd_float3(0.0, 1.0, 1.0)),
             Vertex(position: simd_float2(-0.5, 0.5), color: simd_float3(1.0, 0.0, 1.0))
         ]
-        
         self.vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout.stride(ofValue: vertices[0]), options: MTLResourceOptions.storageModeShared)!
+        
+        // Index buffer
+        let indices: [ushort] = [
+            0, 1, 2,
+            0, 2, 3
+        ]
+        self.indexBuffer = device.makeBuffer(bytes: indices, length: indices.count * MemoryLayout.stride(ofValue: indices[0]), options: MTLResourceOptions.storageModeShared)!
         
         super.init()
     }
@@ -89,7 +95,7 @@ class Renderer: NSObject, MTKViewDelegate {
         // Bind vertex buffer
         renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 30)
         // Render
-        renderEncoder?.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: 6)
+        renderEncoder?.drawIndexedPrimitives(type: MTLPrimitiveType.triangle, indexCount: 6, indexType: MTLIndexType.uint16, indexBuffer: indexBuffer!, indexBufferOffset: 0)
         
         // End encoding
         renderEncoder?.endEncoding()
