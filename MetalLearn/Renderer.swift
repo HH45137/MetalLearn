@@ -58,7 +58,10 @@ class Renderer: NSObject, MTKViewDelegate {
         let vertices: [Vertex] = [
             Vertex(position: simd_float2(-0.5, -0.5), color: simd_float3(1.0, 0.0, 0.0)),
             Vertex(position: simd_float2(0.5, -0.5), color: simd_float3(0.0, 1.0, 0.0)),
-            Vertex(position: simd_float2(0.0, 0.5), color: simd_float3(0.0, 0.0, 1.0))
+            Vertex(position: simd_float2(0.5, 0.5), color: simd_float3(0.0, 0.0, 1.0)),
+            Vertex(position: simd_float2(-0.5, -0.5), color: simd_float3(1.0, 0.0, 0.0)),
+            Vertex(position: simd_float2(0.5, 0.5), color: simd_float3(0.0, 1.0, 1.0)),
+            Vertex(position: simd_float2(-0.5, 0.5), color: simd_float3(1.0, 0.0, 1.0))
         ]
         
         self.vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout.stride(ofValue: vertices[0]), options: MTLResourceOptions.storageModeShared)!
@@ -76,7 +79,7 @@ class Renderer: NSObject, MTKViewDelegate {
         let commandBuffer = self.commandQueue.makeCommandBuffer()
         
         let renderPassDescriptor = view.currentRenderPassDescriptor!
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 0.0, blue: 0.2, alpha: 1.0)
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 0.4, blue: 0.2, alpha: 1.0)
         
         // Create render command encoder
         let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
@@ -86,7 +89,7 @@ class Renderer: NSObject, MTKViewDelegate {
         // Bind vertex buffer
         renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 30)
         // Render
-        renderEncoder?.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: 3)
+        renderEncoder?.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: 6)
         
         // End encoding
         renderEncoder?.endEncoding()
