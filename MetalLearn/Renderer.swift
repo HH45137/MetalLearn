@@ -19,18 +19,35 @@ class Renderer: NSObject, MTKViewDelegate {
     var renderPipelineState: MTLRenderPipelineState?
     
     var vertexBuffer: MTLBuffer?
+    var vertexDescriptor: MTLVertexDescriptor?
     
     init?(metalKitView: MTKView) {
         self.device = metalKitView.device!
         self.commandQueue = self.device.makeCommandQueue()!
         
+        // Vertex descriptior
+        vertexDescriptor = MTLVertexDescriptor()
+        
+        vertexDescriptor?.layouts[30].stride = MemoryLayout<Vertex>.stride
+        vertexDescriptor?.layouts[30].stepRate = 1
+        vertexDescriptor?.layouts[30].stepFunction = MTLVertexStepFunction.perVertex
+        
+        vertexDescriptor?.attributes[0].format = MTLVertexFormat.float2
+        vertexDescriptor?.attributes[0].offset = MemoryLayout.offset(of: \Vertex.position)!
+        vertexDescriptor?.attributes[0].bufferIndex = 30
+        
+        vertexDescriptor?.attributes[1].format = MTLVertexFormat.float3
+        vertexDescriptor?.attributes[1].offset = MemoryLayout.offset(of: \Vertex.color)!
+        vertexDescriptor?.attributes[1].bufferIndex = 30
+        
         self.library = device.makeDefaultLibrary()!
         self.vertexFunction = library.makeFunction(name: "vertexFunction")!
         self.fragmentFunction = library.makeFunction(name: "fragmentFunction")!
         
-        var renderPipelineStateDescriptor = MTLRenderPipelineDescriptor()
+        let renderPipelineStateDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineStateDescriptor.vertexFunction = vertexFunction
         renderPipelineStateDescriptor.fragmentFunction = fragmentFunction
+        renderPipelineStateDescriptor.vertexDescriptor = vertexDescriptor
         renderPipelineStateDescriptor.colorAttachments[0].pixelFormat = metalKitView.colorPixelFormat
         do {
             self.renderPipelineState = try device.makeRenderPipelineState(descriptor: renderPipelineStateDescriptor)
@@ -67,7 +84,7 @@ class Renderer: NSObject, MTKViewDelegate {
         // Bind render pipeline state
         renderEncoder?.setRenderPipelineState(self.renderPipelineState!)
         // Bind vertex buffer
-        renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 30)
         // Render
         renderEncoder?.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: 3)
         

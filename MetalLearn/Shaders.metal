@@ -8,14 +8,14 @@ struct VertexOut {
 };
 
 struct Vertex {
-    float2 position;
-    float3 color;
+    float2 position [[attribute(0)]];
+    float3 color [[attribute(1)]];
 };
 
-vertex VertexOut vertexFunction(uint vid [[vertex_id]], constant Vertex* vertices [[buffer(0)]]) {
+vertex VertexOut vertexFunction(Vertex in [[stage_in]]) {
     VertexOut out;
-    out.position = float4(vertices[vid].position, 0.0, 1.0);
-    out.color = vertices[vid].color;
+    out.position = float4(in.position, 0.0, 1.0);
+    out.color = in.color;
     
     return out;
 }
